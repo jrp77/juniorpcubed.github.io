@@ -14,34 +14,58 @@
   <script src="js/scripts.js"></script>
 
 <style>
-  body, html {
-    height: 100%;
-    margin: 0;
-  }
-
-  .parent {
+  .box {
     position: relative;
   }
 
-  .bg {
-    height: 100vh;
-    width: 100vw;
+  .box-background, .box-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
-  .logo {
-    height: 10%;
-    width: 10%;
-    position: absolute;
-    margin-top: -300px;
-    margin-left: -112.5px;
-    top: 50%;
-    left: 50%;
+  .box-background {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: var(--image-url);
+
+    z-index: 1
+  }
+
+  .box-overlay {
+    background: rgba(0, 0, 0, 0.0);
+
+    z-index: 2;
+  }
+
+  .box-content {
+    position: relative;
+
+    z-index: 3;
+
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
   }
 </style>
-  <div class="parent">
-    <img src="src/img/beach-bg.jpg" class="bg">
-    <div class="logo">
-      <img src="src/img/debug-button.png">
+  <div class="box">
+    <div
+      class="box-background"
+      style="--image-url: url(src/img/beach-bg.jpg)"
+    ></div>
+    <div class="box-overlay"></div>
+    <div class="box-content">
+      <h1>Summer Vibes</h1>
     </div>
   </div>
 </body>
