@@ -19,27 +19,30 @@
     margin: 0;
   }
 
+  .parent {
+    position: relative;
+  }
+
   .bg {
-    /* The image used */
-    background-image: url("src/img/beach-bg.jpg");
+    height: 100vh;
+    width: 100vw;
+  }
 
-    /* Full height */
-    height: 100%;
-
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .logo {
+    height: 10%;
+    width: 10%;
+    position: absolute;
+    margin-top: -300px;
+    margin-left: -112.5px;
+    top: 50%;
+    left: 50%;
   }
 </style>
-
-  <div class="divider"></div>
-
-  <div class="bg"></div>
-
-  <p>This is a test of the Summer Vibes page.</p>
-  <a href="https://open.spotify.com/playlist/0djg8E8r72RcCrcqktXV5D">
-    Spotify
-  </a>
+  <div class="parent">
+    <img src="src/img/beach-bg.jpg" class="bg">
+    <div class="logo">
+      <img src="src/img/debug-button.png">
+    </div>
+  </div>
 </body>
 </html>
